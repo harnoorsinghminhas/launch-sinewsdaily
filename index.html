@@ -1,89 +1,474 @@
 <!doctype html>
-<html lang="en" data-site="sinewsdaily.com">
+<html lang="en">
 <head>
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src https://acp9reat3l.execute-api.us-east-1.amazonaws.com; form-action 'self'; base-uri 'none'; object-src 'none'; upgrade-insecure-requests; require-trusted-types-for 'script'; trusted-types 'none'">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>SI News Daily | Superintelligence (SI) &amp; Artificial Intelligence (AI) news, daily: launching soon</title>
-<meta name="description" content="SI News Daily is launching soon: daily audio news on superintelligence (SI), the next generation of artificial intelligence (AI), plus a five-minute morning brief for your job. Join the free preview.">
-<meta name="robots" content="index,follow">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>My SI Morning | Superintelligence (SI) &amp; Artificial Intelligence (AI) news, daily: SI News Daily</title>
+<meta name="description" content="Superintelligence (SI), the next generation of artificial intelligence (AI), changes every job differently. Hear the free news of the hour, tap your role, and get a five-minute AI brief by 7:00. Rumor or fact on every story. Founders' Preview.">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: blob:; media-src 'self' https://media.theagentsignal.com; connect-src https://acp9reat3l.execute-api.us-east-1.amazonaws.com https://media.theagentsignal.com; form-action 'none'; base-uri 'none'; object-src 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <link rel="canonical" href="https://sinewsdaily.com/">
-<meta name="theme-color" content="#FFF6EC">
-<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="SI News Daily">
-<meta property="og:title" content="SI News Daily | Superintelligence (SI) & Artificial Intelligence (AI) news, daily: launching soon">
-<meta property="og:description" content="SI News Daily is launching soon: daily audio news on superintelligence (SI), the next generation of artificial intelligence (AI), plus a five-minute morning brief for your job. Join the free preview.">
+<meta property="og:title" content="My SI Morning | Superintelligence (SI) & Artificial Intelligence (AI) news, daily: SI News Daily">
+<meta property="og:description" content="Press play on the free news of the hour. Tap your role and see your morning: three stories labelled rumor or fact, one action, done in five minutes.">
 <meta property="og:url" content="https://sinewsdaily.com/">
-<meta property="og:image" content="https://sinewsdaily.com/assets/og.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="SI News Daily: a flat rocket about to launch. Launching soon.">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="SI News Daily | Superintelligence (SI) & Artificial Intelligence (AI) news, daily: launching soon">
-<meta name="twitter:description" content="SI News Daily is launching soon: daily audio news on superintelligence (SI), the next generation of artificial intelligence (AI), plus a five-minute morning brief for your job. Join the free preview.">
-<meta name="twitter:image" content="https://sinewsdaily.com/assets/og.png">
-<link rel="stylesheet" href="assets/style.css">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#FFF6EC">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='10' fill='%231F2A44'/%3E%3Cpath d='M12 29a8 8 0 0 1 16 0z' fill='%23FF6B5B'/%3E%3Cpath d='M11.5 20.5a12 12 0 0 1 17 0M8 17a17 17 0 0 1 24 0M7.5 29h25' stroke='%23FFF6EC' stroke-width='2.6' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="assets/live.css">
+<link rel="preload" href="img/char_purple_pulse.png" as="image">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+ {"@type":"Organization","name":"SI News Daily","url":"https://sinewsdaily.com/","slogan":"SI is the new AI.","parentOrganization":{"@type":"Organization","name":"SI Network","url":"https://siagentsignal.com/"},"founder":{"@type":"Person","name":"Harnoor Minhas","jobTitle":"Founder & CEO"}},
+ {"@type":"WebSite","name":"SI News Daily","url":"https://sinewsdaily.com/","description":"Daily artificial intelligence (AI) and superintelligence (SI) news: a role-tuned brief by 7:00 and the free news of the hour."}
+]}
+</script>
+<script src="assets/hourly.js" defer></script>
+<script src="app.js" defer></script>
 </head>
 <body>
-<a class="skip" href="#main">Skip to the sign-up</a>
-<div class="wrap">
-  <header>
+<a class="skip" href="#signup">Skip to sign-up</a>
+
+<header class="top">
+  <div class="wrap top-in">
     <!-- LOGO SLOT: the single <img> below is the only place the logo appears. To swap in the real logo, replace assets/logo.svg
-         (same file name), or drop in a PNG/SVG and change src, width and height here. See README.md. -->
-    <a class="brand" href="/" aria-label="SI News Daily, home"><img class="logo" id="logo" src="assets/logo.svg" width="190" height="38" alt="SI News Daily"></a>
-  </header>
+         (same file name), or drop in a PNG/SVG and change src and width here. See README.md. -->
+    <a class="lockup" href="#top" aria-label="SI News Daily, back to top"><img class="logo" id="logo" src="assets/logo.svg" width="190" height="38" alt="SI News Daily"></a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#listen">Listen</a>
+      <a href="#morning">Your morning</a>
+      <a href="#quiz">Quiz</a>
+      <a href="#gifts">Gifts</a>
+      <a href="#plans">Plans</a>
+    </nav>
+    <a class="btn sm top-cta" href="#signup" data-join>Get my brief</a>
+  </div>
+</header>
+
+<main id="top">
+<div class="wrap">
   <p class="terms"><span class="t-si">Superintelligence (SI)</span> <span class="t-amp">&amp;</span> <span class="t-ai">Artificial Intelligence (AI)</span></p>
-  <main id="main">
-    <div class="stage">
-<svg class="rocket" viewBox="0 0 320 360" aria-hidden="true" focusable="false">
-  <defs><clipPath id="rk-body"><path d="M160 36 C200 78 216 128 216 190 L216 236 L104 236 L104 190 C104 128 120 78 160 36 Z"/></clipPath></defs>
-  <circle class="c-stage" cx="160" cy="190" r="146"/>
-  <g class="motif"><circle class="fill-m1" cx="252" cy="88" r="27"/><line class="stroke m1" x1="292.0" y1="88.0" x2="303.0" y2="88.0"/><line class="stroke m1" x1="280.3" y1="116.3" x2="288.1" y2="124.1"/><line class="stroke m1" x1="252.0" y1="128.0" x2="252.0" y2="139.0"/><line class="stroke m1" x1="223.7" y1="116.3" x2="215.9" y2="124.1"/><line class="stroke m1" x1="212.0" y1="88.0" x2="201.0" y2="88.0"/><line class="stroke m1" x1="223.7" y1="59.7" x2="215.9" y2="51.9"/><line class="stroke m1" x1="252.0" y1="48.0" x2="252.0" y2="37.0"/><line class="stroke m1" x1="280.3" y1="59.7" x2="288.1" y2="51.9"/></g>
-  <g class="sparks"><path class="sp" d="M60 91 Q60 100 69 100 Q60 100 60 109 Q60 100 51 100 Q60 100 60 91 Z"/><path class="sp" d="M52 220 Q52 226 58 226 Q52 226 52 232 Q52 226 46 226 Q52 226 52 220 Z"/><path class="sp" d="M276 217 Q276 224 283 224 Q276 224 276 231 Q276 224 269 224 Q276 224 276 217 Z"/></g>
-  <g class="rocket-g">
-    <g class="flame"><path class="c-flame1" d="M140 250 C140 286 150 306 160 332 C170 306 180 286 180 250 Z"/><path class="c-flame2" d="M149 250 C149 272 155 288 160 302 C165 288 171 272 171 250 Z"/></g>
-    <path class="c-fin" d="M104 188 C78 198 62 222 58 266 L104 238 Z"/>
-    <path class="c-fin" d="M216 188 C242 198 258 222 262 266 L216 238 Z"/>
-    <path class="c-nozzle" d="M130 234 L190 234 L182 256 L138 256 Z"/>
-    <g clip-path="url(#rk-body)">
-      <rect class="c-body" x="100" y="30" width="120" height="212"/>
-      <rect class="c-shade" x="188" y="30" width="34" height="212"/>
-      <path class="c-nose" d="M100 30 H220 V110 Q160 126 100 110 Z"/>
-      <rect class="c-band" x="100" y="206" width="120" height="16"/>
-    </g>
-    <circle class="c-ring" cx="160" cy="156" r="27"/>
-    <circle class="c-glass" cx="160" cy="156" r="20"/>
-    <circle class="c-glint" cx="153" cy="149" r="6"/>
-  </g>
-  <g class="puffs"><circle class="c-cloud puff p1" cx="148" cy="270" r="8"/><circle class="c-cloud puff p2" cx="172" cy="272" r="7"/><circle class="c-cloud puff p3" cx="160" cy="280" r="9"/></g>
-  <g class="clouds c-cloud"><rect x="34" y="324" width="252" height="24" rx="12"/><circle cx="82" cy="320" r="18"/><circle cx="120" cy="311" r="24"/><circle cx="204" cy="313" r="26"/><circle cx="246" cy="321" r="16"/></g>
-</svg>
-    </div>
-    <div class="copy">
-      <p class="pill">Founders&rsquo; Preview</p>
-      <h1><span class="sr">SI News Daily: </span>Launching soon</h1>
-      <p class="lead">Daily audio news on superintelligence (SI), the next generation of artificial intelligence (AI): the news of the hour, plus a five-minute morning brief tuned to your job.</p>
-      <form class="join" id="join" novalidate>
-        <label class="lbl" for="email">Email</label>
-        <div class="row">
-          <input id="email" name="email" type="email" inputmode="email" autocomplete="email" autocapitalize="off" spellcheck="false" placeholder="Your email address" required aria-describedby="fine err">
-          <button class="btn" type="submit">Join the free preview</button>
-        </div>
-        <div class="hp" aria-hidden="true"><label for="hp1">Website (leave this empty)</label><input id="hp1" name="website" type="text" tabindex="-1" autocomplete="off"></div>
-        <p class="fine" id="fine">Free. No spam, unsubscribe in one click. We email you a link to confirm.</p>
-        <p class="err js-err" id="err" role="alert"></p>
-        <noscript><p class="fine">Sign-up needs JavaScript switched on.</p></noscript>
-      </form>
-      <div class="done" id="done" role="status" tabindex="-1" hidden>
-        <h2>You&rsquo;re in.</h2>
-        <p>Check your inbox: we sent a link to confirm <b id="done-email"></b>. Tap it to join the free preview.</p>
-      </div>
-      <p class="note">Founders&rsquo; Preview: everything here is pre-launch, including Free. We&rsquo;re still building; you&rsquo;re getting an early look.</p>
-    </div>
-  </main>
-  <footer><a href="https://theagentsignal.com/privacy.html" rel="noopener">Privacy</a></footer>
 </div>
-<script src="assets/app.js"></script>
+
+<!-- ============ HERO: promise, role, email | on-air player ============ -->
+<section class="hero" aria-labelledby="h1">
+  <div class="wrap hero-in">
+    <div class="h-top">
+      <p class="eyebrow">AI → SI news · Founders' Preview</p>
+      <h1 id="h1">Your job's <span class="si">SI</span> brief. Ready by 7:00.</h1>
+      <p class="lede"><span class="si">Superintelligence (SI)</span>, the next generation of artificial intelligence (AI), is changing every job differently. We read the AI news from thousands of sources and hand you the five minutes that matter for <strong id="ledeRole">your role</strong>. Every story says rumor or fact.</p>
+    </div>
+
+    <div class="h-act">
+      <fieldset class="roles">
+        <legend>Tap your role</legend>
+        <div class="chiprow" id="roleChips">
+          <input type="radio" name="role" id="r-marketer" value="marketer"><label for="r-marketer">Marketer</label>
+          <input type="radio" name="role" id="r-founder" value="founder"><label for="r-founder">Founder &amp; Exec</label>
+          <input type="radio" name="role" id="r-engineer" value="engineer"><label for="r-engineer">Engineer</label>
+          <input type="radio" name="role" id="r-pm" value="pm"><label for="r-pm">Product Manager</label>
+          <input type="radio" name="role" id="r-security" value="security"><label for="r-security">Security</label>
+          <input type="radio" name="role" id="r-investor" value="investor"><label for="r-investor">Investor &amp; Analyst</label>
+          <input type="radio" name="role" id="r-legal" value="legal"><label for="r-legal">Policy &amp; Legal</label>
+          <input type="radio" name="role" id="r-educator" value="educator"><label for="r-educator">Educator &amp; Student</label>
+        </div>
+      </fieldset>
+
+      <form class="signup" id="signup" method="post" novalidate>
+        <div id="step1">
+          <label class="flabel" for="email">Email</label>
+          <div class="frow">
+            <input type="email" id="email" name="email" autocomplete="email" inputmode="email" placeholder="Your email address" required maxlength="254" spellcheck="false" autocapitalize="off" aria-describedby="emailErr emailHelp">
+            <button class="btn" type="submit" id="signupBtn">Send my brief</button>
+          </div>
+          <div class="hp" aria-hidden="true"><label for="website">Leave this field empty</label><input type="text" id="website" name="website" tabindex="-1" autocomplete="off"></div>
+          <p class="err" id="emailErr" role="alert"></p>
+          <p class="fine" id="emailHelp">Free, no card. No spam: unsubscribe in one click. You'll get our free daily brief by email (from our sister daily, The Agent Signal, during the preview), and we send a link to confirm. <a href="#faq-data">What we collect</a></p>
+          <p class="giftline"><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="4" y="13" width="24" height="15" rx="3" fill="#FF6B5B"/><rect x="2.5" y="9" width="27" height="6" rx="2" fill="#1F2A44"/><path d="M16 9v19" stroke="#FFF6EC" stroke-width="2.4"/><path d="M16 9c-2-5-8-5-7-1 1 2 5 1 7 1zm0 0c2-5 8-5 7-1-1 2-5 1-7 1z" fill="none" stroke="#1F2A44" stroke-width="2"/></svg><span>Plus a free welcome gift you pick, like your own alien or a theme song. <a href="#gifts">See the gifts</a></span></p>
+        </div>
+
+        <div id="step2" class="s2" tabindex="-1" hidden>
+          <h3 id="s2h">Check your inbox.</h3>
+          <p class="sent">We sent a confirmation link to <b id="sentTo"></b>. Tap it to start your free morning brief. Can't see it? Check spam or promotions.</p>
+
+          <div class="s2block" aria-labelledby="s2gift">
+            <h4 id="s2gift">Your welcome gift</h4>
+            <div class="gmini" role="radiogroup" aria-labelledby="s2gift" id="giftMini"></div>
+            <p class="gdeliver" id="giftDeliver"></p>
+            <div class="alienmaker" id="alienMaker" hidden>
+              <div class="prev"><img id="alienPrev" alt="Your alien, with your name on a badge beside it" width="320" height="320"></div>
+              <div>
+                <p class="small"><b>Your alien is ready.</b> Pick a colour, add your name, save it as your profile picture.</p>
+                <div class="swatches" role="group" aria-label="Alien colour">
+                  <button type="button" data-col="blue" aria-pressed="true">Blue</button>
+                  <button type="button" data-col="purple" aria-pressed="false">Purple</button>
+                </div>
+                <button type="button" class="btn navy sm" id="alienSave">Save my alien</button>
+                <p class="tiny" id="alienMsg" role="status"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="s2block">
+            <h4>Tune your brief <span class="muted">(optional, 20 seconds)</span></h4>
+            <div class="pf">
+              <div><label for="pfName">First name</label><input type="text" id="pfName" autocomplete="given-name" maxlength="80"></div>
+              <div><label for="pfRole">Your role</label><select id="pfRole"></select></div>
+              <div class="full"><label for="pfPhone">Mobile, only if you want the 7:00 text</label><input type="tel" id="pfPhone" autocomplete="tel" inputmode="tel" maxlength="40"></div>
+              <div class="full consent"><input type="checkbox" id="pfSms"><label for="pfSms">Text me my 7:00 headline once texts start (not live yet). Up to 1 message a day. Msg &amp; data rates may apply. Reply STOP to stop, HELP for help. Consent isn't a condition of any purchase.</label></div>
+            </div>
+            <div class="rowbtns">
+              <button class="btn navy sm" type="button" id="pfSave">Save my details</button>
+              <button class="btn ghost sm" type="button" id="pfSkip">Not now</button>
+            </div>
+            <p class="err" id="pfErr" role="alert"></p>
+            <p class="okmsg" id="pfMsg" role="status"></p>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="h-air">
+      <section class="onair" id="listen" aria-labelledby="listenH">
+        <div class="oa-head"><span class="onair-pill"><span class="pulse" aria-hidden="true"></span>On air</span><span id="clock"></span></div>
+        <div class="oa-grid">
+          <div class="stage">
+            <img class="companion" id="companion" src="img/char_purple_pulse.png" width="195" height="320" alt="">
+            <span class="badge" id="stationBadge">SI station</span>
+          </div>
+          <div class="oa-ctl">
+            <button class="play" id="playBtn" type="button" aria-label="Play the news of the hour">
+              <svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.6v14.8a1 1 0 0 0 1.5.86l12.2-7.4a1 1 0 0 0 0-1.72L8.5 3.74A1 1 0 0 0 7 4.6z" fill="currentColor"/></svg>
+              <svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="4" width="4.5" height="16" rx="1.2" fill="currentColor"/><rect x="13.5" y="4" width="4.5" height="16" rx="1.2" fill="currentColor"/></svg>
+            </button>
+            <h2 class="oa-title" id="listenH">The news of the hour</h2>
+            <p class="oa-sub">Free. Press play, no sign-up.</p>
+          </div>
+        </div>
+        <div class="oa-bar">
+          <input type="range" id="seek" min="0" max="1000" value="0" step="1" aria-label="Position in the news of the hour" aria-valuetext="Not started">
+          <span class="oa-time" id="ptime">0:00</span>
+        </div>
+        <div class="stations" role="group" aria-label="Choose a station">
+          <button type="button" data-st="si" aria-pressed="true" title="SI = superintelligence, the new name for AI (artificial intelligence)">SI<small>all of AI</small></button>
+          <button type="button" data-st="claude" aria-pressed="false">Claude<small>at launch</small></button>
+          <button type="button" data-st="openai" aria-pressed="false">OpenAI<small>at launch</small></button>
+          <button type="button" data-st="gemini" aria-pressed="false">Gemini<small>at launch</small></button>
+        </div>
+        <p class="oa-note" id="pnote" role="status">Live hourly brief, Founders' Preview. Assembled automatically; a fresh one every hour.</p>
+        <audio id="audio" src="https://media.theagentsignal.com/ironman/audio/si-preview/hourly/latest.mp3" preload="metadata" data-hr="audio"></audio>
+      </section>
+    </div>
+
+    <div class="h-proof">
+      <ul class="proof" aria-label="What our desk reads">
+        <li><b id="mArticles">Over half a million</b><span>AI articles read</span></li>
+        <li><b>Thousands</b><span>of sources</span></li>
+        <li><b>22</b><span>categories</span></li>
+        <li><b>Every hour</b><span>new on the desk</span></li>
+      </ul>
+      <p class="asof"><span class="dot" id="asofDot" aria-hidden="true"></span><span id="asofText">Desk snapshot: <time datetime="2026-10-03T04:26:59Z">Oct 3, 04:26 UTC</time></span></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ YOUR MORNING: the sample brief, swipeable ============ -->
+<section class="band alt" id="morning" aria-labelledby="mornH">
+  <div class="wrap">
+    <div class="shead">
+      <p class="eyebrow">My SI Morning · dated sample, Sep 22-23</p>
+      <h2 id="mornH">Here's a marketer's Tuesday.</h2>
+      <p class="sub" id="mornSub">My SI Morning is your daily brief (SI: superintelligence, the new name for AI). Swipe through a dated sample (not today's news): three stories from our Sep 22 issue, one action, and done.</p>
+    </div>
+    <div class="deck" id="deck" role="region" aria-roledescription="carousel" aria-label="Sample brief">
+      <div class="snap" id="deckTrack" tabindex="0" aria-label="Sample brief cards. Use the arrow keys to move between cards."></div>
+      <div class="deck-nav">
+        <button class="navbtn" type="button" id="deckPrev" aria-label="Previous card"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <span class="dots" id="deckDots" aria-hidden="true"></span>
+        <span class="deck-count" id="deckCount" aria-live="polite">1 of 5</span>
+        <button class="navbtn" type="button" id="deckNext" aria-label="Next card"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ON THE DESK: news trickling in, labelled (no mascot next to news) ============ -->
+<section class="band" id="desk" aria-labelledby="deskH">
+  <div class="wrap">
+    <div class="shead">
+      <p class="eyebrow">On the desk</p>
+      <h2 id="deskH">The AI news, coming in. Labelled.</h2>
+      <p class="sub">Every story carries a label and a source. <b>Confirmed</b> means the source itself says so. <b>Reported</b> means credible outlets carry it, with no primary source yet. <b>Still open</b> means thin or conflicting sourcing, and it never becomes advice.</p>
+    </div>
+    <div class="desk">
+      <div class="card">
+        <h3 class="k">This hour · live</h3>
+        <p class="hr-warm" data-hr="warm" role="status">The hourly brief is warming up. Check back in a minute or two.</p>
+        <div class="hr-live" data-hr="live" hidden>
+          <div class="hr-bar"><span class="hr-fp">Founders' Preview</span><p class="hr-updated" data-hr="updated" role="status"></p></div>
+          <ul class="hr-stories" data-hr="stories"></ul>
+          <div class="hr-tk" data-hr="ticker"></div>
+          <p class="hr-tidbit" data-hr="tidbit"></p>
+          <p class="hr-fine"><span data-hr="count"></span> articles read in the last 24 hours. Assembled automatically each hour in this preview.</p>
+        </div>
+      </div>
+      <div class="card">
+        <h3 class="k">Desk pulse · last 72 hours</h3>
+        <p class="bigline">Hundreds of new AI articles every hour.</p>
+        <svg class="chart" id="pulseChart" viewBox="0 0 360 120" role="img" aria-label="Bar chart of articles coming in per hour, Sep 30 to Oct 3, UTC. Most hours bring a few hundred; the two biggest hours reached about 1,800."></svg>
+        <p class="tiny">Articles in per hour (UTC), Sep 30 to Oct 3. Coral bar: the latest hour in this snapshot.</p>
+        <h3 class="k mt16">Hot this week</h3>
+        <ul class="hot" id="hot" aria-label="Busiest categories this week, articles read, rounded"></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ QUIZ: three questions, the alien levels up ============ -->
+<section class="band alt" id="quiz" aria-labelledby="quizH">
+  <div class="wrap quiz-in">
+    <div class="card quizcard">
+      <p class="eyebrow">Three questions · one minute</p>
+      <h2 id="quizH">Can you spot a rumor?</h2>
+      <div id="quizBody"></div>
+    </div>
+    <aside class="card level" aria-labelledby="lvlH">
+      <h3 id="lvlH">Your alien levels up</h3>
+      <div class="lstage"><img id="lvlImg" src="img/char_blue_pulse-standing2.png" width="169" height="273" alt="" loading="lazy"><span class="badge" id="lvlBadge">Level 1 · Tuned in</span></div>
+      <ol class="lsteps" id="lvlSteps" aria-label="Levels">
+        <li class="on">Tuned in</li><li>Antenna glow</li><li>New colour</li><li>Sharp-eyed badge</li>
+      </ol>
+      <p class="tiny">Every right answer levels your alien up. On the real thing, listening and learning do it too.</p>
+    </aside>
+  </div>
+</section>
+
+<!-- ============ GIFT DROP + LEVEL-UP PREVIEW ============ -->
+<section class="band" id="gifts" aria-labelledby="giftsH">
+  <div class="wrap">
+    <div class="shead">
+      <p class="eyebrow">Welcome gift</p>
+      <h2 id="giftsH">Pick your welcome gift.</h2>
+      <p class="sub">One gift, free, when you sign up. Our own work, made for you. Join another SI Network newsletter later and unlock another, so you can collect them like stickers.</p>
+    </div>
+    <fieldset class="giftset">
+      <legend class="sr">Choose one welcome gift</legend>
+      <div class="snap gifts" id="giftRow">
+        <div><input type="radio" name="gift" id="g-alien" value="alien"><label class="gcard" for="g-alien"><span class="gcheck"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="#FFF6EC" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="gicon al"><img src="img/char_blue_pulse-standing2.png" width="169" height="273" alt="" loading="lazy"></span><b>Your alien</b><span>Your own flat alien in your colour, with your name on a badge beside it. A ready-made profile picture.</span><em>Instant: save it right after you sign up</em></label></div>
+        <div><input type="radio" name="gift" id="g-song" value="song"><label class="gcard" for="g-song"><span class="gcheck"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="#FFF6EC" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="gicon"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M12 23V8l14-3v15" fill="none" stroke="#1F2A44" stroke-width="2.6" stroke-linejoin="round"/><circle cx="8.5" cy="23.5" r="4" fill="#FF6B5B"/><circle cx="22.5" cy="20.5" r="4" fill="#FF6B5B"/></svg></span><b>Your theme song</b><span>An original track with your name in it, made in our own music lab. One-time, yours to keep.</span><em>Made for you after you confirm</em></label></div>
+        <div><input type="radio" name="gift" id="g-audio" value="audio"><label class="gcard" for="g-audio"><span class="gcheck"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="#FFF6EC" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="gicon"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M6 19v-3a10 10 0 0 1 20 0v3" fill="none" stroke="#1F2A44" stroke-width="2.6"/><rect x="4" y="18" width="7" height="10" rx="2.5" fill="#FF6B5B"/><rect x="21" y="18" width="7" height="10" rx="2.5" fill="#FF6B5B"/></svg></span><b>A 3-minute audio brief</b><span>A short brief on the topic you care about most, in the same voice as the hourly news.</span><em>In your inbox after you confirm</em></label></div>
+        <div><input type="radio" name="gift" id="g-chapter" value="chapter"><label class="gcard" for="g-chapter"><span class="gcheck"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="#FFF6EC" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="gicon"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M4 7c4-1.5 8-1.5 12 1v18c-4-2.5-8-2.5-12-1z" fill="#FF6B5B"/><path d="M28 7c-4-1.5-8-1.5-12 1v18c4-2.5 8-2.5 12-1z" fill="none" stroke="#1F2A44" stroke-width="2.4" stroke-linejoin="round"/></svg></span><b>A free book chapter</b><span>Any chapter from our 21-book library, about a million words on AI and the world it's building.</span><em>In your inbox after you confirm</em></label></div>
+        <div><input type="radio" name="gift" id="g-wall" value="wallpaper"><label class="gcard" for="g-wall"><span class="gcheck"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="#FFF6EC" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="gicon"><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="9" y="3" width="14" height="26" rx="3" fill="none" stroke="#1F2A44" stroke-width="2.4"/><path d="M11 23l4-5 3 3 2-2 2 4z" fill="#FF6B5B"/><circle cx="18.5" cy="11" r="2.2" fill="#FF6B5B"/></svg></span><b>Alien-crew wallpapers</b><span>A pack of phone and desktop wallpapers starring the whole crew.</span><em>In your inbox after you confirm</em></label></div>
+      </div>
+    </fieldset>
+    <p class="gstatus" id="giftStatus" role="status"></p>
+
+    <div class="twocol">
+      <div class="card">
+        <h3>Community unlocks</h3>
+        <ul class="unlock mt6">
+          <li><b>1,000</b><span>sign-ups: a bonus drop for everyone on the list.</span></li>
+          <li><b>10,000</b><span>sign-ups: a bigger one, for everyone again.</span></li>
+          <li><b>Always</b><span>Surprise drops go to everyone. No prize draws, ever.</span></li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Your alien grows with you</h3>
+        <p class="tiny mt4">Listen and learn, and your alien levels up. Streaks are opt-in, with a free freeze day each week: miss a morning and nothing resets.</p>
+        <ol class="snap levels" aria-label="Level-up preview">
+          <li class="lv"><span class="lvs"><img src="img/char_blue_pulse-standing2.png" width="169" height="273" alt=""></span><b>Day 1</b><span>Tuned in</span></li>
+          <li class="lv"><span class="lvs"><img class="glow" src="img/char_blue_pulse-standing2.png" width="169" height="273" alt=""></span><b>Day 7</b><span>Antenna glow</span></li>
+          <li class="lv"><span class="lvs"><img src="img/char_purple_globe-standing2.png" width="170" height="274" alt=""></span><b>Day 21</b><span>New colour</span></li>
+          <li class="lv"><span class="lvs"><img class="glow" src="img/char_purple_globe-standing2.png" width="170" height="274" alt=""></span><b>Day 40</b><span>Founding badge</span></li>
+        </ol>
+        <p class="tiny">Preview: the level-up gear is still in the studio.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PLANS: reservations only, refundable before launch ============ -->
+<section class="band alt" id="plans" aria-labelledby="plansH">
+  <div class="wrap">
+    <div class="shead">
+      <p class="eyebrow">Plans · Founders' Preview</p>
+      <h2 id="plansH">Free gets your morning. Pro makes it yours. MAX adds every lane.</h2>
+      <p class="sub">Paid tiers are reservations only: a small deposit locks the founding price before launch. We don't charge subscriptions for anything that isn't built yet.</p>
+    </div>
+
+    <div class="card lanes">
+      <p id="lanesLine"><b>Pro covers your 3 lanes. MAX covers all 22.</b> Tap your role to see yours.</p>
+      <ul class="lanecloud" id="laneCloud" aria-label="Categories, with articles read in the last 7 days, rounded"></ul>
+      <button class="linkbtn" type="button" id="laneMore" aria-expanded="false" aria-controls="laneCloud">Show all 22 lanes</button>
+      <p class="tiny">Articles read per lane, Sep 27 to Oct 3, rounded. Articles can sit in more than one lane.</p>
+    </div>
+
+    <div class="snap plans" id="planGrid">
+      <article class="plan" aria-labelledby="pl-free">
+        <div><h3 id="pl-free">Free</h3><p class="pitch">Your morning, on us.</p></div>
+        <div class="price"><b>$0</b><span>forever</span></div>
+        <p class="launch">No card, no deposit. Just your email.</p>
+        <ul class="feats"><li>Your free morning brief, by 7:00</li><li>The news of the hour</li><li>Rumor and fact labels on every story</li><li>One welcome gift you pick</li></ul>
+        <span class="grow"></span>
+        <a class="btn ghost" href="#signup" data-join>Start free</a>
+      </article>
+      <article class="plan" aria-labelledby="pl-pro">
+        <div><h3 id="pl-pro">Pro</h3><p class="pitch">Made for your job.</p></div>
+        <div class="price"><b>$7.99</b><span>/mo founding price</span></div>
+        <p class="launch">Pro launches at $9.99/mo. Or lock $79/yr instead of $99.</p>
+        <span class="save">Save $24 a year (20%)</span>
+        <ul class="feats"><li>Your role's 3 lanes, in full</li><li>The full hourly radio</li><li>A personal brief, tuned by your taps</li></ul>
+        <span class="grow"></span>
+        <button class="btn navy" type="button" data-reserve="pro">Reserve Pro · $9.99 deposit</button>
+        <p class="note">Insiders get first access to new features and prices, plus notes from the build room. Refundable before launch; secure checkout by Stripe.</p>
+      </article>
+      <article class="plan hero" aria-labelledby="pl-max">
+        <span class="ribbon">Most complete</span>
+        <div><h3 id="pl-max">MAX</h3><p class="pitch">Every lane, plus depth.</p></div>
+        <div class="price"><b>$149</b><span>/yr founding price</span></div>
+        <p class="launch">MAX launches at $199/yr. Or lock $14.99/mo instead of $19.99, about the price of one AI assistant plan.</p>
+        <span class="save">Save $50 a year (25%)</span>
+        <ul class="feats"><li>All 22 lanes, in full</li><li>Morning and evening Deep Dive (learning, no news)</li><li>All 24 white papers, with audio</li><li>The member community</li><li>Everything in Pro</li></ul>
+        <span class="grow"></span>
+        <button class="btn" type="button" data-reserve="max">Reserve MAX · $29 deposit</button>
+        <p class="note">Insiders get first access to new features and prices, plus notes from the build room. Refundable before launch; secure checkout by Stripe.</p>
+      </article>
+      <article class="plan" aria-labelledby="pl-ultra">
+        <div><h3 id="pl-ultra">Ultra</h3><p class="pitch">The whole library.</p></div>
+        <div class="price"><b>$699</b><span>/yr founding price</span></div>
+        <p class="launch">Ultra launches at $999/yr. Or lock $69.99/mo instead of $99.99.</p>
+        <span class="save">Save $300 a year (30%)</span>
+        <ul class="feats"><li>The 21-book library</li><li>Training by job title</li><li>The full AI-Era Defense Playbook</li><li>The insider circle</li><li>Everything in MAX</li></ul>
+        <span class="grow"></span>
+        <button class="btn navy" type="button" data-reserve="ultra">Reserve Ultra · $99 deposit</button>
+        <p class="note">Insiders get first access to new features and prices, plus notes from the build room. Refundable before launch; secure checkout by Stripe.</p>
+      </article>
+    </div>
+    <p class="allin">All prices are all-in: no tax line, no added cents at checkout. Just a few newsletters? At launch, à la carte gives you any 3 for $9.99/mo, +$2.99 each after, capped at $24.99/mo. From 5, MAX at its founding price costs less and covers all 22.</p>
+
+    <div class="card insider">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3l3.6 7.6 8.4 1.1-6.1 5.8 1.5 8.3L16 21.8l-7.4 4 1.5-8.3L4 11.7l8.4-1.1z" fill="#FF6B5B"/></svg>
+      <p><b>Reservation holders are insiders.</b> First access to new features, products and prices; occasional sneak peeks by email; and notes from the build room as we go.</p>
+    </div>
+
+    <div class="shop">
+      <article class="card prod" aria-labelledby="pbH">
+        <span class="tag">Available now</span>
+        <h3 id="pbH">The AI-Era Defense Playbook</h3>
+        <p>About 100 pages (PDF) plus the audio edition: a practical guide to protecting your work, money and data as AI tools spread.</p>
+        <span class="p">$49 <small>proposed price</small></span>
+        <button class="btn navy" type="button" data-reserve="playbook">Buy the Playbook</button>
+        <p class="tiny">A normal purchase of something that exists today. Digital download: no refunds once delivered.</p>
+      </article>
+      <article class="card prod" aria-labelledby="wpH">
+        <span class="tag soon">Coming next</span>
+        <h3 id="wpH">White papers, one at a time</h3>
+        <p>Any of our 24 white papers on its own, each with an audio version. MAX includes all 24.</p>
+        <p class="tiny">Single copies are priced at launch.</p>
+      </article>
+    </div>
+    <ul class="trust" aria-label="How checkout works">
+      <li>Secure checkout by Stripe (connecting during the preview)</li>
+      <li>Move your deposit to another tier any time before launch</li>
+      <li>No hidden renewals</li>
+      <li>No third-party trackers</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ STRAIGHT ANSWERS + FOUNDER + BUILD ROOM ============ -->
+<section class="band" id="faq" aria-labelledby="faqH">
+  <div class="wrap faq-in">
+    <div class="faq">
+      <h2 id="faqH" class="mb12">Straight answers</h2>
+      <details><summary>What does SI mean?</summary><p>SI stands for superintelligence: our name for where artificial intelligence (AI) is heading, and the word we use for the field. SI is the new AI. It's a name, not a claim that superintelligence already exists. Our hub, <a href="https://siagentsignal.com/" target="_blank" rel="noopener">siagentsignal.com</a>, is home to the SI Stylebook: how we use AI, AGI, SI and agents.</p></details>
+      <details><summary>Is this live?</summary><p>We're pre-launch, in a Founders' Preview. The free morning brief runs now (sent by our sister daily, The Agent Signal, while ours is finished), and so does the live news of the hour. Role tuning and the extra stations are rolling out. Pro, MAX and Ultra are reservations only, and we'll say plainly when each one goes live.</p></details>
+      <details><summary>Why pick a role from a list?</summary><p>A fixed list means nothing you type is sent to an AI. That keeps your brief predictable and the system safe. Missing your job? Reserve and vote for it.</p></details>
+      <details id="faq-deposit"><summary>What happens to my deposit?</summary><p>It's refundable on request before launch: one email or one click, no calls, no surveys. At launch it becomes credit toward your first bill at your locked founding price, which holds for as long as you stay subscribed. You can move it to another tier any time before launch. Once a product is delivered, normal no-refund terms apply.</p></details>
+      <details id="faq-data"><summary>What do you collect?</summary><p>Your email address. Optionally your first name, your role, and a mobile number only if you tick the separate text box. Our servers log IP addresses. This page keeps your choices here (role, gift, quiz, taps) on your own device only. No covert cookies, no fingerprinting, no third-party trackers. Unsubscribe in one click from any email. <a href="https://theagentsignal.com/privacy.html" target="_blank" rel="noopener">Privacy notice</a>.</p></details>
+      <details><summary>Will you push tools on me?</summary><p>No ads, no affiliate links, no sponsors. Every action names two or more tools side by side, and we only sell our own products.</p></details>
+    </div>
+    <div class="side">
+      <div class="card founder">
+        <p class="k">Built by a real person</p>
+        <p class="mt8">SI News Daily is built by Harnoor Minhas, founder &amp; CEO, with a lot of automation and one simple rule: we read every source so you don't have to. AI does the heavy reading; people set the standards.</p>
+        <p class="who">Our mission: make people smarter every day.</p>
+      </div>
+      <div class="card">
+        <p class="k">From the build room</p>
+        <ul class="log mt6">
+          <li><time datetime="2026-10-03">Oct 3</time><span>The Founders' Preview opens: role samples, the live hourly brief and reservations.</span></li>
+          <li><time datetime="2026-10-03">Oct 3</time><span>Our desk passes half a million AI articles, across 22 categories.</span></li>
+          <li><span class="t">Running</span><span>Hourly two-voice audio, live rumor detection, a 21-book library and 24 white papers.</span></li>
+        </ul>
+        <p class="tiny mt8">Next up, decided by reservations: more roles, a Saturday week-in-review, and your role's own hourly station.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ YOU'RE CAUGHT UP (the close) ============ -->
+<section class="close" id="caughtup" aria-labelledby="doneH">
+  <div class="wrap">
+    <div class="crew" aria-hidden="true">
+      <img src="img/char_purple_pulse-lying.png" width="296" height="231" alt="" loading="lazy">
+      <img src="img/char_white_meditating.png" width="196" height="245" alt="" loading="lazy">
+      <img src="img/char_blue_pulse-standing2.png" width="169" height="273" alt="" loading="lazy">
+    </div>
+    <h2 id="doneH">You're caught up.</h2>
+    <p id="doneText">That's everything for now. The news of the hour is here whenever you want it, and your brief can meet you at 7:00 tomorrow.</p>
+    <a class="btn" href="#signup" id="doneCta" data-join>Send me tomorrow's brief</a>
+  </div>
+</section>
+</main>
+
+<footer class="foot on-dark">
+  <div class="wrap foot-in">
+    <div>
+      <a class="lockup" href="#top" aria-label="SI News Daily. SI is the new AI. Back to top">
+        <svg class="mark" viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="10" fill="#FFF6EC"/><path d="M12 29a8 8 0 0 1 16 0z" fill="#FF6B5B"/><path d="M11.5 20.5a12 12 0 0 1 17 0M8 17a17 17 0 0 1 24 0M7.5 29h25" stroke="#1F2A44" stroke-width="2.6" fill="none" stroke-linecap="round"/></svg>
+        <span class="lk-text"><span class="wm">SI News Daily</span><span class="tagline">SI is the new AI.</span></span>
+      </a>
+      <p class="netline"><img src="img/mark_a_solid.png" width="72" height="61" alt="" loading="lazy"><span>Part of the SI Network. Hub: <a href="https://siagentsignal.com/" target="_blank" rel="noopener">siagentsignal.com</a>, home of the SI Stylebook.</span></p>
+      <p id="footAsof">Founders' Preview: everything is pre-launch, including Free. Desk numbers are rounded, from our Oct 3 snapshot. The hourly audio and stories above are live.</p>
+    </div>
+    <div>
+      <p><a href="https://theagentsignal.com/privacy.html" target="_blank" rel="noopener">Privacy notice</a> · <a href="#faq-deposit">Reservation terms</a> · <a href="#faq-data">What we collect</a> · <a href="mailto:privacy@theagentsignal.com">privacy@theagentsignal.com</a></p>
+      <p>No ads, affiliates or partner perks. We sell only our own products. Unsubscribe in one click from any email.</p>
+      <p>Built with AI, using AI. © 2026 SI News Daily.</p>
+      <p>Part of Superintelligence, the home of superintelligence. Est. October 3, 2026.</p>
+      <p>Superintelligence, a trade name of HM Tech Solutions LLC</p>
+    </div>
+  </div>
+</footer>
+
+<!-- reserve / buy: four lines, fixed order, no urgency, no mascot -->
+<dialog id="dlg" aria-labelledby="dlgH">
+  <div class="dlg">
+    <h2 id="dlgH">Reserve</h2>
+    <dl class="four" id="dlgFour"></dl>
+    <p class="insline" id="dlgIns">Reservation holders are insiders: first access to new features, products and prices, sneak peeks by email, and notes from the build room.</p>
+    <button class="btn block" type="button" id="dlgPay">Reserve</button>
+    <p class="refund" id="dlgRefund"></p>
+    <p class="test" id="dlgTest" role="status" hidden>Stripe Checkout connects during the Founders' Preview. Nothing was charged.</p>
+    <button class="btn ghost sm block closebtn" type="button" id="dlgClose">Not now</button>
+  </div>
+</dialog>
+
+<!-- mobile: one-thumb tab bar; Listen plays instantly -->
+<nav class="tabbar" id="tabbar" aria-label="Quick actions">
+  <button type="button" class="tb-play" id="tbPlay" aria-label="Play the news of the hour"><span class="ring"><svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.6v14.8a1 1 0 0 0 1.5.86l12.2-7.4a1 1 0 0 0 0-1.72L8.5 3.74A1 1 0 0 0 7 4.6z" fill="currentColor"/></svg><svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="4" width="4.5" height="16" rx="1.2" fill="currentColor"/><rect x="13.5" y="4" width="4.5" height="16" rx="1.2" fill="currentColor"/></svg></span><span>Listen</span></button>
+  <a href="#morning"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 18a8 8 0 0 1 16 0M2 18h20M12 3v3M4.9 7.9l2 2M19.1 7.9l-2 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>Morning</span></a>
+  <a href="#quiz"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M9.6 9.5a2.5 2.5 0 1 1 3.3 2.4c-.6.3-.9.8-.9 1.4v.7M12 17.2v.3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>Quiz</span></a>
+  <a href="#plans"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.8-4.5 4.3 1.1 6.1L12 16.9l-5.4 2.9 1.1-6.1-4.5-4.3 6.1-.8z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg><span>Plans</span></a>
+  <a href="#signup" class="tb-join" data-join><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M4 7l8 6 8-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg><span>Join free</span></a>
+</nav>
+
+<noscript><p class="wrap nojs">Turn on JavaScript to play the audio, try the role samples, the quiz and the sign-up form.</p></noscript>
 </body>
 </html>
