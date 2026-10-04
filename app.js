@@ -88,10 +88,10 @@ var GIFT_ORDER = ["alien","song","audio","chapter","wallpaper"];
 
 /* ===== prices: TIERED-RESERVATION-PRICING-2026-10-03.md (do not invent). All-in. ===== */
 var DLG = {
- pro:{t:"Reserve Pro",get:"Your role's 3 lanes in full, the full hourly radio, and a personal brief tuned by your taps.",price:"Pro launches at $9.99/mo or $99/yr. Your founding price: $7.99/mo or $79/yr, locked for as long as you stay subscribed.",save:"$2 a month, $24 a year (20%). Or $20 a year on annual.",today:"$9.99 refundable deposit, credited to your first bill at launch.",pay:"Reserve Pro with Stripe \u00b7 $9.99"},
- max:{t:"Reserve MAX",get:"All 22 lanes in full, morning and evening Deep Dive (learning, no news), all 24 white papers with audio, the member community, and everything in Pro.",price:"MAX launches at $199/yr or $19.99/mo. Your founding price: $149/yr or $14.99/mo, locked for as long as you stay subscribed.",save:"$50 a year on annual (25%). Or $5 a month, $60 a year, on monthly.",today:"$29 refundable deposit, credited to your first bill at launch.",pay:"Reserve MAX with Stripe \u00b7 $29"},
- ultra:{t:"Reserve Ultra",get:"The 21-book library, training by job title, the full AI-Era Defense Playbook, the insider circle, and everything in MAX.",price:"Ultra launches at $999/yr or $99.99/mo. Your founding price: $699/yr or $69.99/mo, locked for as long as you stay subscribed.",save:"$300 a year on annual (30%). Or $30 a month, $360 a year, on monthly.",today:"$99 refundable deposit, credited to your first bill at launch.",pay:"Reserve Ultra with Stripe \u00b7 $99"},
- playbook:{t:"Buy the AI-Era Defense Playbook",get:"About 100 pages (PDF) plus the audio edition, delivered by email.",price:"$49 (proposed price), all-in.",saveK:"Note",save:"Ultra includes the full Playbook, if you'd rather reserve that.",todayK:"Today",today:"$49, a normal purchase of something that exists today.",pay:"Buy with Stripe \u00b7 $49",refund:"Digital download: no refunds once delivered.",buy:true}
+ pro:{t:"Reserve Pro",get:"Your role's 3 lanes in full, the full hourly radio, and a personal brief tuned by your taps.",price:"Pro launches at $9.99/mo or $99/yr. Your founding price: $7.99/mo or $79/yr, yours if you opt in at launch, kept while you stay subscribed.",save:"Nothing renews or converts on its own. At launch we email you a link: opt in and your deposit counts toward your first payment, or do nothing and it is refunded in full.",today:"$9.99 refundable deposit, refundable in full until you opt in.",pay:"Reserve Pro with Stripe \u00b7 $9.99"},
+ max:{t:"Reserve MAX",get:"All 22 lanes in full, morning and evening Deep Dive (learning, no news), all 24 white papers with audio, the member community, and everything in Pro.",price:"MAX launches at $199/yr or $19.99/mo. Your founding price: $149/yr or $14.99/mo, yours if you opt in at launch, kept while you stay subscribed.",save:"Nothing renews or converts on its own. At launch we email you a link: opt in and your deposit counts toward your first payment, or do nothing and it is refunded in full.",today:"$29 refundable deposit, refundable in full until you opt in.",pay:"Reserve MAX with Stripe \u00b7 $29"},
+ ultra:{t:"Reserve Ultra",get:"The 21-book library, training by job title, the full AI-Era Defense Playbook, the insider circle, and everything in MAX.",price:"Ultra launches at $999/yr or $99.99/mo. Your founding price: $699/yr or $69.99/mo, yours if you opt in at launch, kept while you stay subscribed.",save:"Nothing renews or converts on its own. At launch we email you a link: opt in and your deposit counts toward your first payment, or do nothing and it is refunded in full.",today:"$99 refundable deposit, refundable in full until you opt in.",pay:"Reserve Ultra with Stripe \u00b7 $99"},
+ playbook:{t:"Buy the AI-Era Defense Playbook",get:"About 100 pages (PDF) plus the audio edition, delivered by email.",price:"$49, one payment, all-in.",saveK:"Note",save:"Ultra includes the full Playbook, if you'd rather reserve that.",todayK:"Today",today:"$49, a normal purchase of something that exists today.",pay:"Buy with Stripe \u00b7 $49",refund:"A digital download: we email the link after payment, usually within minutes. If it fails or is not as described, write within 14 days for a fix or a full refund.",buy:true}
 };
 
 /* ===== helpers ===== */
@@ -548,11 +548,11 @@ function openDlg(k) {
   var d = DLG[k]; if (!d) { return; }
   lastFocus = document.activeElement;
   $("dlgH").textContent = d.t;
-  $("dlgFour").innerHTML = [["What you get", d.get], ["Price", d.price], [d.saveK || "You save", d.save], [d.todayK || "Deposit", d.today]]
+  $("dlgFour").innerHTML = [["What you get", d.get], ["Price", d.price], [d.saveK || "Good to know", d.save], [d.todayK || "Deposit", d.today]]
     .map(function (r) { return '<div><dt>' + esc(r[0]) + '</dt><dd>' + esc(r[1]) + '</dd></div>'; }).join("");
   $("dlgIns").hidden = !!d.buy;
   $("dlgPay").textContent = d.pay;
-  $("dlgRefund").textContent = d.refund || "Refundable on request before launch: one email or one click. Move it to another tier any time before launch. Prices are all-in.";
+  $("dlgRefund").textContent = d.refund || "Refundable in full until you opt in at launch: one email. Nothing renews or converts on its own. Prices are all-in.";
   $("dlgTest").hidden = true;
   if (dlg.showModal) { dlg.showModal(); } else { dlg.setAttribute("open", ""); }
   $("dlgPay").focus();
