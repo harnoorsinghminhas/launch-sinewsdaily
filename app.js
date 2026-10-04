@@ -9,14 +9,14 @@ var SITE = "sinewsdaily.com";
 var RM = !!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
 var BEHAVIOR = RM ? "auto" : "smooth";
 
-/* ===== REAL DATA: F:/TITAN/state/category-whitepaper.json, generated 2026-10-03T04:26:59Z.
-   Shown ROUNDED on the page (his 10:37 rule): never an exact source count, magnitudes only. ===== */
+/* ===== SAMPLE DATA, generated 2026-10-03.
+   Shown ROUNDED on the page: never an exact source count, magnitudes only. ===== */
 var SNAP = { asOf: "2026-10-03T04:26:59Z", label: "Oct 3, 04:26 UTC", articles: 571740, maxAgeH: 26 };
 /* [slug, unique_articles, unique_stories, articles per day 09-27..10-03 (10-03 partial)] */
 var CATS = [["claude",13548,5157,[128,269,440,92,52,57,14]],["gemini",8919,3283,[51,124,143,63,70,65,7]],["openai",18122,8020,[245,342,768,245,126,133,35]],["agentic-ai",102294,54401,[2232,2916,4638,1502,1229,1238,190]],["cloud-ai",12797,8676,[250,330,540,184,139,161,26]],["robotics",15958,8332,[219,323,461,172,101,133,21]],["ai-safety",12025,6903,[142,328,592,185,192,183,16]],["creative-ai",7834,4351,[127,176,231,72,49,57,9]],["amazon-ai",3183,2140,[31,49,71,30,29,29,5]],["apple-ai",2445,1673,[49,26,59,35,19,21,6]],["benchmarks",5791,4528,[116,194,354,94,117,112,9]],["china-ai",34764,17551,[555,1057,695,497,326,257,64]],["consumer-ai",7580,5615,[133,177,302,120,94,84,13]],["enterprise-ai",19683,9279,[223,367,593,169,98,90,11]],["frontier-research",19276,13253,[305,591,1400,358,456,388,20]],["funding",37963,22201,[474,894,1043,498,307,315,69]],["meta-ai",1325,902,[48,47,62,30,19,26,5]],["microsoft-ai",4803,2538,[52,83,86,35,22,11,0]],["open-source-ai",9055,3967,[121,142,159,67,71,71,25]],["policy",45298,22990,[471,1651,1686,765,562,458,81]],["security",28798,16456,[386,1019,1043,368,321,274,55]],["silicon",10385,4637,[66,211,292,76,32,51,14]]];
 /* articles in per hour, 2026-09-30T05:00 .. 2026-10-03T04:00 UTC (72 points) */
 var HOURLY = [498,538,533,530,522,595,928,664,1012,795,581,698,730,704,625,603,628,498,458,443,418,412,770,1827,484,429,522,539,556,551,596,585,630,594,626,607,601,530,513,519,488,452,421,403,389,411,479,1805,510,364,445,483,506,515,472,482,580,589,535,574,505,500,484,403,417,393,379,332,310,300,283,295];
-/* lane names = newsletter categories ("China AI" shows as Frontier US/China, his 09-29 rename) */
+/* lane names = newsletter categories ("China AI" shows as Frontier US/China) */
 var NAMES = {"claude":"Claude","gemini":"Gemini","openai":"OpenAI","agentic-ai":"Agentic AI","cloud-ai":"Cloud AI","robotics":"Robotics","ai-safety":"AI Safety","creative-ai":"Creative AI","amazon-ai":"Amazon AI","apple-ai":"Apple AI","benchmarks":"Benchmarks","china-ai":"Frontier US/China","consumer-ai":"Consumer AI","enterprise-ai":"Enterprise AI","frontier-research":"Frontier Research","funding":"Funding","meta-ai":"Meta AI","microsoft-ai":"Microsoft AI","open-source-ai":"Open-Source AI","policy":"Policy","security":"Security","silicon":"Silicon"};
 
 /* ===== ROLE SAMPLES: real stories from our own issues (dev.theagentsignal.com), Sep 22-23, 2026.
@@ -542,7 +542,7 @@ var savedSt = store("station"); if (savedSt && STATIONS[savedSt]) { setStation(s
 function tick() { try { $("clock").textContent = new Date().toLocaleTimeString([], { hour: "numeric", minute: "2-digit" }) + " your time"; } catch (e) { /* optional */ } }
 tick(); setInterval(tick, 20000);
 
-/* ===== reserve / buy dialog: four lines, fixed order; Stripe test mode until his keys + go ===== */
+/* ===== reserve / buy dialog: four lines, fixed order ===== */
 var dlg = $("dlg"), lastFocus = null;
 function openDlg(k) {
   var d = DLG[k]; if (!d) { return; }

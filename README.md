@@ -1,20 +1,6 @@
-# SI News Daily (sinewsdaily.com)
+# sinewsdaily.com
 
-Live site, served by GitHub Pages at https://sinewsdaily.com/. Static files only: no build step, no dependencies, no secrets.
-Launched October 3, 2026 as a Founders' Preview: everything is pre-launch, including Free, and unfinished parts say "coming".
-DNS and HTTPS are already set; the `CNAME` file keeps the custom domain, so do not delete it (and keep it without a trailing newline).
-
-## Files
-| File | What it is |
-|---|---|
-| `index.html` | The page: My SI Morning, the live on-air hour, role samples, quiz, gifts, plans, FAQ. |
-| `styles.css`, `app.js` | Styling (the brand tokens are the `:root` block at the top) and the page's behaviour. |
-| `img/` | Alien art and the signal mark. The old dated sample audio (`hour.mp3`) was removed: the player now plays the live hour. |
-| `assets/hourly.js` + `assets/live.css` | The live "this hour" bulletin and the "Launched" line (see below). Same files on every SI site. |
-| `assets/logo.svg` | PLACEHOLDER text wordmark: the logo slot (see "How to swap the logo"). |
-| `launching-soon.html`, `assets/launching-soon/` | The old "Launching soon" rocket page, archived (not linked, not indexed). |
-| `404.html` | Not-found page in the site's own style. Uses root-absolute paths because Pages serves it at the missing URL. |
-| `CNAME`, `.nojekyll`, `robots.txt`, `sitemap.xml` | Pages plumbing. Keep them. |
+Static site served by GitHub Pages. The custom domain is set in `CNAME`; do not delete it.
 
 ## How to swap the logo (one place)
 The logo is a single image in the page header of `index.html` (and of `404.html`):
@@ -29,18 +15,3 @@ The logo is a single image in the page header of `index.html` (and of `404.html`
    Do the same in `404.html` (its path starts with a slash: `/assets/logo.png`).
 3. Use a logo that reads on the header background: light (cream).
 4. Commit and push to `main`; GitHub Pages republishes in about a minute. The favicon (`img/mark-a.png` or the inline icon) is a separate file.
-
-## The live hour
-`assets/hourly.js` fetches https://media.theagentsignal.com/ironman/audio/si-preview/hourly/latest.json (public, CORS `*`) on load and every 5 minutes.
-It fills the elements marked `data-hr="..."` with the five labelled stories (Confirmed / Reported / Still open, each with a "Source: outlet" credit),
-the headline ticker, the tidbit, the audio player and the "Updated N min ago" line. Everything is written with `textContent`; a story without a known label
-is dropped; story links must be `https`; the audio must come from `media.theagentsignal.com`. If the fetch fails the page shows a calm "warming up" note.
-The page's content-security policy allows that one host in `connect-src` and `media-src`.
-
-## Sign-up
-The email boxes post to `https://acp9reat3l.execute-api.us-east-1.amazonaws.com/signal/request-link` with `site` = `sinewsdaily.com`. The API must list this origin in its CORS allow-list.
-Payment buttons are the build's preview buttons: no live checkout is connected yet and no payment is taken. Do not switch test and live mode from here.
-
-## Notes
-- The content-security policy is a `<meta>` tag in `index.html` (Pages cannot set headers). If you add anything external, add its host there.
-- External links open in a new tab. No street address appears anywhere on the site.
