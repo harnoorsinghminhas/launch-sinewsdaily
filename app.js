@@ -543,7 +543,7 @@ function tick() { try { $("clock").textContent = new Date().toLocaleTimeString([
 tick(); setInterval(tick, 20000);
 
 /* ===== reserve / buy dialog: four lines, fixed order ===== */
-var dlg = $("dlg"), lastFocus = null;
+var dlg = $("dlg"), lastFocus = null, payUrl = "";
 function openDlg(k) {
   var d = DLG[k]; if (!d) { return; }
   lastFocus = document.activeElement;
@@ -558,8 +558,8 @@ function openDlg(k) {
   $("dlgPay").focus();
 }
 function closeDlg() { if (dlg.close) { dlg.close(); } else { dlg.removeAttribute("open"); } }
-document.addEventListener("click", function (e) { var t = e.target.closest("[data-reserve]"); if (t) { openDlg(t.getAttribute("data-reserve")); } });
-$("dlgPay").addEventListener("click", function () { $("dlgTest").hidden = false; });
+document.addEventListener("click", function (e) { var t = e.target.closest("[data-reserve]"); if (t) { payUrl = t.getAttribute("data-pay-url") || ""; openDlg(t.getAttribute("data-reserve")); } });
+$("dlgPay").addEventListener("click", function () { /* pay-wired */ if (payUrl) { window.location.assign(payUrl); return; } $("dlgTest").hidden = false; });
 $("dlgClose").addEventListener("click", closeDlg);
 dlg.addEventListener("click", function (e) { if (e.target === dlg) { closeDlg(); } });
 dlg.addEventListener("close", function () { if (lastFocus && lastFocus.focus) { lastFocus.focus(); } });
