@@ -141,12 +141,12 @@
             <span class="badge" id="stationBadge">SI station</span>
           </div>
           <div class="oa-ctl">
-            <button class="play" id="playBtn" type="button" aria-label="Play the news of the hour">
+            <button class="play" id="playBtn" type="button" aria-label="Play the news of the hour (AI-generated voices)">
               <svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.6v14.8a1 1 0 0 0 1.5.86l12.2-7.4a1 1 0 0 0 0-1.72L8.5 3.74A1 1 0 0 0 7 4.6z" fill="currentColor"/></svg>
               <svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="4" width="4.5" height="16" rx="1.2" fill="currentColor"/><rect x="13.5" y="4" width="4.5" height="16" rx="1.2" fill="currentColor"/></svg>
             </button>
             <h2 class="oa-title" id="listenH">The news of the hour</h2>
-            <p class="oa-sub">Free. Press play, no sign-up.</p>
+            <p class="oa-sub">Free. Press play, no sign-up. AI-generated voices.</p>
           </div>
         </div>
         <div class="oa-bar">
@@ -375,7 +375,7 @@
       <li>Secure checkout by Stripe (connecting during the preview)</li>
       <li>Move your deposit to another tier any time before launch</li>
       <li>No hidden renewals</li>
-      <li>No third-party trackers</li>
+      <li>No advertising or analytics trackers</li>
     </ul>
   </div>
 </section>
@@ -389,7 +389,7 @@
       <details><summary>Is this live?</summary><p>We're pre-launch, in a Founders' Preview. The free morning brief runs now (sent by our sister daily, The Agent Signal, while ours is finished), and so does the live news of the hour. Role tuning and the extra stations are rolling out. Pro, MAX and Ultra are reservations only, and we'll say plainly when each one goes live.</p></details>
       <details><summary>Why pick a role from a list?</summary><p>A fixed list means nothing you type is sent to an AI. That keeps your brief predictable and the system safe. Missing your job? Reserve and vote for it.</p></details>
       <details id="faq-deposit"><summary>What happens to my deposit?</summary><p>It's refundable on request before launch: one email or one click, no calls, no surveys. At launch it becomes credit toward your first bill at your locked founding price, which holds for as long as you stay subscribed. You can move it to another tier any time before launch. Once a product is delivered, normal no-refund terms apply.</p></details>
-      <details id="faq-data"><summary>What do you collect?</summary><p>Your email address. Optionally your first name, your role, and a mobile number only if you tick the separate text box. Our servers log IP addresses. This page keeps your choices here (role, gift, quiz, taps) on your own device only. No covert cookies, no fingerprinting, no third-party trackers. Unsubscribe in one click from any email. <a href="https://siagentsignal.com/privacy.html" target="_blank" rel="noopener">Privacy notice</a>.</p></details>
+      <details id="faq-data"><summary>What do you collect?</summary><p>Your email address. Optionally your first name, your role, and a mobile number only if you tick the separate text box. Our servers log IP addresses. This page keeps your choices here (role, gift, quiz, taps) on your own device only. No covert cookies, no fingerprinting, no advertising or analytics trackers. Unsubscribe in one click from any email. <a href="https://siagentsignal.com/privacy.html" target="_blank" rel="noopener">Privacy notice</a>.</p></details>
       <details><summary>Will you push tools on me?</summary><p>No ads, no affiliate links, no sponsors. Every action names two or more tools side by side, and we only sell our own products.</p></details>
     </div>
     <div class="side">
@@ -462,7 +462,7 @@
 
 <!-- mobile: one-thumb tab bar; Listen plays instantly -->
 <nav class="tabbar" id="tabbar" aria-label="Quick actions">
-  <button type="button" class="tb-play" id="tbPlay" aria-label="Play the news of the hour"><span class="ring"><svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.6v14.8a1 1 0 0 0 1.5.86l12.2-7.4a1 1 0 0 0 0-1.72L8.5 3.74A1 1 0 0 0 7 4.6z" fill="currentColor"/></svg><svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="4" width="4.5" height="16" rx="1.2" fill="currentColor"/><rect x="13.5" y="4" width="4.5" height="16" rx="1.2" fill="currentColor"/></svg></span><span>Listen</span></button>
+  <button type="button" class="tb-play" id="tbPlay" aria-label="Play the news of the hour (AI-generated voices)" title="AI-generated voices."><span class="ring"><svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.6v14.8a1 1 0 0 0 1.5.86l12.2-7.4a1 1 0 0 0 0-1.72L8.5 3.74A1 1 0 0 0 7 4.6z" fill="currentColor"/></svg><svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="4" width="4.5" height="16" rx="1.2" fill="currentColor"/><rect x="13.5" y="4" width="4.5" height="16" rx="1.2" fill="currentColor"/></svg></span><span>Listen</span></button>
   <a href="#morning"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 18a8 8 0 0 1 16 0M2 18h20M12 3v3M4.9 7.9l2 2M19.1 7.9l-2 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>Morning</span></a>
   <a href="#quiz"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M9.6 9.5a2.5 2.5 0 1 1 3.3 2.4c-.6.3-.9.8-.9 1.4v.7M12 17.2v.3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>Quiz</span></a>
   <a href="#plans"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.8-4.5 4.3 1.1 6.1L12 16.9l-5.4 2.9 1.1-6.1-4.5-4.3 6.1-.8z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg><span>Plans</span></a>
